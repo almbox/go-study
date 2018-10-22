@@ -5,14 +5,16 @@
 
 [https://golang.org/doc/install](https://golang.org/doc/install)
 
-## Get Go Package for sending email using gmail and deamonize watchdog
+## Configuration
+
+### Get Go Package for sending email using gmail and deamonize watchdog
 
 ```golang
 go get gopkg.in/gomail.v2
 go get github.com/sevlyar/go-daemon
 ```
 
-## Configure variables
+### Configure variables
 
 ```golang
 // challenge doc variables
@@ -20,7 +22,7 @@ const command string = "systemctl"
 const serviceName string = "docker"
 const checkInterval int = 2 // Seconds
 const restartCount int = 2
-const logFilePath string = "log/watchdog.log"
+const logFilePath string = "./watchdog.log"
 
 // email conf
 const sender string = "example@gmail.com"
@@ -38,12 +40,12 @@ const debug = false
 go run watchdog.go
 ```
 
-## Kill daemon
+### Kill daemon
 
 ```bash
 kill -9 <pid>
 ```
 
-## Warning!
+# Warning!
 
 This script had been developed and published for study purposes only
