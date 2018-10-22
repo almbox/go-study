@@ -167,7 +167,7 @@ func SendMail(status bool) {
 
 	d := gomail.NewDialer(smtpServer, 587, sender, password)
 
-	// Send the email to Bob, Cora and Dan.
+	// Send the email
 	if err := d.DialAndSend(m); err != nil {
 		l.Printf("ERROR: Failed to send email %s\n", err)
 	}
